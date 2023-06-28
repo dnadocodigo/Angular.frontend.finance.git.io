@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { SelectModel } from 'src/app/models/selectModel';
 import { MenuService } from 'src/app/services/menu.service';
 
 @Component({
@@ -7,9 +9,27 @@ import { MenuService } from 'src/app/services/menu.service';
   styleUrls: ['./category.component.scss']
 })
 export class CategoryComponent {
-  constructor(public menuService: MenuService) {
+  constructor(public menuService: MenuService, public formBuilder: FormBuilder) {
   }
+
+  categoryForm:FormGroup;
+
   ngOnInit(){
     this.menuService.menuSelected = 3;
+    this.categoryForm = this.formBuilder.group(
+      {
+        name:['', [Validators.required]]
+      })
+  }
+
+  systemsList = new Array<SelectModel>()
+  systemsSelect = new SelectModel();
+
+  formDate(){
+    return this.categoryForm.controls;
+  }
+  send(){
+    debugger
+    var data = this.formDate();
   }
 }
