@@ -17,7 +17,7 @@ export class ExpenseComponent {
   expenseForm:FormGroup;
 
   ngOnInit(){
-    this.menuService.menuSelected = 4;
+    this.menuService.menuSelected = 3;
     this.expenseForm = this.formBuilder.group(
       {
         name:['', [Validators.required]],

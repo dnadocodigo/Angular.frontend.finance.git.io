@@ -19,13 +19,13 @@ export class SidebarComponent {
         this.router.navigate(['/dashboard']);
         break;
         case 2:
-          this.router.navigate(['/system']);
+          this.router.navigate(['/category']);
           break;
         case 3:
-        this.router.navigate(['/category']);
+        this.router.navigate(['/expense']);
         break;
         case 4:
-          this.router.navigate(['/expense']);
+          this.router.navigate(['/system']);
           break;
       default:
         break;

@@ -21,16 +21,17 @@ const routes: Routes = [
     loadChildren: ()=> import('./pages/dashboard/dashboard.module').then(m=>m.DashBoardModule),
   },
   {
-    path:'system',
-    loadChildren: ()=> import('./pages/system/system.module').then(m=>m.SystemModule),
-  },
-  {
     path:'category',
     loadChildren: ()=> import('./pages/category/category.module').then(m=>m.CategoryModule),
   },
+
   {
     path:'expense',
     loadChildren: ()=> import('./pages/expense/expense.module').then(m=>m.ExpenseModule),
+  },
+  {
+    path:'system',
+    loadChildren: ()=> import('./pages/system/system.module').then(m=>m.SystemModule),
   },
 ];
 
