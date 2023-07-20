@@ -1,6 +1,8 @@
+import { publishFacade } from '@angular/compiler';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 import { LoginService } from 'src/app/services/login.service';
 
 @Component({
@@ -9,7 +11,12 @@ import { LoginService } from 'src/app/services/login.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-  constructor(public formBuilder: FormBuilder, private router: Router, private LoginService:LoginService){
+  constructor(
+    public formBuilder: FormBuilder,
+    private router: Router,
+    private LoginService:LoginService,
+    public authService: AuthService
+    ){
 
   }
   loginForm: FormGroup;
@@ -26,8 +33,9 @@ export class LoginComponent {
   loginUser(){
     this.LoginService.login(this.formData["email"].value, this.formData["password"].value).subscribe(
       token => {
-        // alert(token);
-        this.router.navigate(['/home'])
+        this.authService.setToken(token);
+        this.authService.authenticatedUser(true);
+        this.router.navigate(['/home']);
       },
       error =>{
         alert("Ocorreu um erro ao tentar egerar o token!");
