@@ -13,13 +13,13 @@ import { HttpStatus, LoaderInterceptor } from './interceptors/loader.interceptor
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { AuthGuard } from './pages/guards/auth-guard.service';
 
-
 const RxJS = [LoaderInterceptor, HttpStatus];
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
+
   ],
   imports: [
     BrowserModule,

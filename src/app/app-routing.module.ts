@@ -32,10 +32,15 @@ const routes: Routes = [
     loadChildren: ()=> import('./pages/category/category.module').then(m=>m.CategoryModule),
     canActivate:[AuthGuard]
   },
+
   {
     path:'expense',
     loadChildren: ()=> import('./pages/expense/expense.module').then(m=>m.ExpenseModule),
     canActivate:[AuthGuard]
+  },
+  {
+    path:'system',
+    loadChildren: ()=> import('./pages/system/system.module').then(m=>m.SystemModule),
   },
 ];
 

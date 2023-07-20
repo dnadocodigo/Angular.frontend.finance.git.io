@@ -19,6 +19,7 @@ import { NgSelectModule } from "@ng-select/ng-select";
     FormsModule,
     ReactiveFormsModule,
     NgSelectModule,
+
   ]
 })
 export class CategoryModule{}

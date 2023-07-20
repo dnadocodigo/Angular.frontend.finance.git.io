@@ -15,7 +15,7 @@ export class CategoryComponent {
   categoryForm:FormGroup;
 
   ngOnInit(){
-    this.menuService.menuSelected = 3;
+    this.menuService.menuSelected = 2;
     this.categoryForm = this.formBuilder.group(
       {
         name:['', [Validators.required]]
